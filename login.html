@@ -1,0 +1,35 @@
+<html>
+
+<head>
+    <base target="_top">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <form id="loginForm" class="form-signin" onsubmit="handleFormSubmit(this)">
+        <h1 class="h1 mb-3 font-weight-normal">Sign in</h1>
+        <div id="badCredentials" class="alert alert-danger" style="display: none" role="alert">
+            bad credentials
+        </div>
+        <label for="inputLogin" class="sr-only">Login</label>
+        <input type="text" id="inputLogin" name="login" class="form-control form-control-lg" placeholder="Login"
+            required autofocus>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" name="password" class="form-control form-control-lg"
+            placeholder="Password" required>
+        <input type="hidden" name="client_id" class="form-control form-control-lg" placeholder="client_id"
+            value="<?= client_id ?>">
+        <input type="hidden" name="scope" class="form-control form-control-lg" value="<?= scope ?>">
+        This app will have access to <?= scope ?>
+        <input type="hidden" name="redirect_uri" class="form-control form-control-lg" value="<?= redirect_uri ?>">
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+
+    </form>
+    <div id="output"></div>
+
+
+    <script type="text/javascript" src="login.js"></script>
+</body>
+
+</html>
