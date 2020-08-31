@@ -56,3 +56,20 @@ function doGet(e){
 
  return HTMLOutput
 }
+
+
+
+
+
+function doGet(){
+
+ var appData = {
+ "heading": "Yo World!",
+ "body": "You are not Welcome to the web app."
+ };
+
+ var JSONString = JSON.stringify(appData);
+ var JSONOutput = ContentService.createTextOutput(JSONString);
+ JSONOutput.setMimeType(ContentService.MimeType.JSON);
+ return JSONOutput
+}

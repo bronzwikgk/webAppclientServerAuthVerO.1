@@ -1,25 +1,31 @@
-//Live Link
-// https://script.google.com/macros/s/AKfycby73Lae66krqRJ8FM-J6kw8bt86ewyZqRnxRZUAyuvBrzCwu0y4/exec
-//https://script.google.com/macros/s/AKfycbwwsMBQwupw1WeuNuGgeXPOjXbwg93FuTH-MXXCOb27k_atp0nr/exec?operation=auth
-
-//This function when invoked, responds Returns with value of the request key, in the requested format
-//Comman UseCase >> Authenticate (createNewuser)/ Authrise (for creating child Api)/create (userCreateReq of own data) / Read [data /attributes ]/ update(userCreateReq of own data) / Delete
 
 /**
- * Reverts with a response based on the request parameter
+ * Server.gs is a server side function that handles new user registration. It should handle all the feature releated with User LifeCycle, including payment and issues Quota Token
+ * This script when published has to be executed as the publisher a supplementary client side project handles all the client and his data Query.
+ * //Comman UseCase >> Authenticate (createNewuser) / Authrize (for creating child Api)/create (userCreateReq of own data) / Read [data /attributes ]/ update(userCreateReq of own data) / Delete
+ * Live Link
+ * https://script.google.com/a/0dot1.live/macros/s/AKfycbwoCxEu1kqQ2VqG5ybZXqDOhjobcswGaGQXHZazTA/exec
+ * https://script.google.com/macros/s/AKfycbwwsMBQwupw1WeuNuGgeXPOjXbwg93FuTH-MXXCOb27k_atp0nr/exec?operation=auth
+ * To be implemented
+ * https://developers.google.com/identity/sign-in/web
+ */ 
+
+
+
+
+
+
+/**
+ * Reverts with a response based on the request parameter.
  */
+function doGet(request) {
+  return HtmlService.createTemplateFromFile('login')
+      .evaluate();
+}
 
-function doGet(){
-
- var appData = {
- "heading": "Yo World!",
- "body": "You are not Welcome to the web app."
- };
-
- var JSONString = JSON.stringify(appData);
- var JSONOutput = ContentService.createTextOutput(JSONString);
- JSONOutput.setMimeType(ContentService.MimeType.JSON);
- return JSONOutput
+function include(filename) {
+  return HtmlService.createHtmlOutputFromFile(filename)
+      .getContent();
 }
 
 
