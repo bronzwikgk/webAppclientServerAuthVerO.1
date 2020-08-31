@@ -6,12 +6,13 @@
     <title>[ everything happens here ]</title>
     <link rel="stylesheet" href="styles/style.css">    
     <?!= include('style'); ?>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="385607167966-tcruka7135q36f77k56vrtb28tbsabsv.apps.googleusercontent.com">
 </head>
 
 <body>
     <form id="loginForm" class="form-signin" onsubmit="handleFormSubmit(this)">
-        <h1 class="h1 mb-3 font-weight-normal">Sign in now</h1>
+        <h1 class="h1 mb-3 font-weight-normal">Sign Up now</h1>
         <div id="badCredentials" class="alert alert-danger" style="display: none" role="alert">
             bad credentials
         </div>
@@ -22,7 +23,9 @@
         <input type="password" id="inputPassword" name="password" class="form-control form-control-lg"
             placeholder="Password" required>
        
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
+        <div>Or</div>
+        <div class="g-signin2" data-onsuccess="onSignIn"></div>
 
     </form>
     <div id="output"></div>   
