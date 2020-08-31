@@ -8,6 +8,7 @@
  * https://script.google.com/macros/s/AKfycbwwsMBQwupw1WeuNuGgeXPOjXbwg93FuTH-MXXCOb27k_atp0nr/exec?operation=auth
  * To be implemented
  * https://developers.google.com/identity/sign-in/web
+ * https://github.com/gsuitedevs/apps-script-oauth2/tree/master/samples/NoLibrary
  */ 
 
 
