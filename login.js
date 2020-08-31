@@ -7,6 +7,7 @@ function preventFormSubmit() {
         });
     }
 }
+
 window.addEventListener('load', preventFormSubmit);
 
 function handleFormSubmit(formObject) {
